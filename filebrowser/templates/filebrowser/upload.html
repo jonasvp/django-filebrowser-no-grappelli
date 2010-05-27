@@ -30,7 +30,7 @@
             'checkScript'       : '{% url fb_check %}',
             'cancelImg'         : '{{ settings_var.URL_FILEBROWSER_MEDIA }}uploadify/cancel.png',
             'auto'              : false,
-            'folder'            : '{% if dir in query %}{{ query.dir }}{% endif %}',
+            'folder'            : '{% if 'dir' in query %}{{ query.dir }}{% endif %}',
             'multi'             : true,
             'fileDesc'          : '{% for extension in settings_var.EXTENSIONS.items %}{% ifnotequal extension.0 'Folder' %}{% for item in extension.1 %}*{{ item|safe }};{% endfor %}{% endifnotequal %}{% endfor %}',
             'fileExt'           : '{% for extension in settings_var.EXTENSIONS.items %}{% ifnotequal extension.0 'Folder' %}{% for item in extension.1 %}*{{ item|safe }};{% endfor %}{% endifnotequal %}{% endfor %}',
