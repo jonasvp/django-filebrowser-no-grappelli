@@ -25,9 +25,9 @@ class FileBrowseWidget(Input):
         js = (os.path.join(URL_FILEBROWSER_MEDIA, 'js/AddFileBrowser.js'), )
     
     def __init__(self, attrs=None):
-        self.directory = attrs.get('directory', '')
-        self.extensions = attrs.get('extensions', '')
-        self.format = attrs.get('format', '')
+        self.directory = attrs and attrs.get('directory', '') or ''
+        self.extensions = attrs and attrs.get('extensions', '') or ''
+        self.format = attrs and attrs.get('format', '') or ''
         if attrs is not None:
             self.attrs = attrs.copy()
         else:
